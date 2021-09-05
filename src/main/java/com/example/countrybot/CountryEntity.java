@@ -39,8 +39,9 @@ public class CountryEntity {
 
     public boolean equalJapaneseName(String searchString) {
     	if (japaneseName.contains("|")) {
-    		String[] japaneseNames = japaneseName.split("|");
+    		String[] japaneseNames = japaneseName.split("\\|");
     		for (String name : japaneseNames) {
+    			System.out.println(name);
     			if(name.equals(searchString)) {
     				return true;
     			}
