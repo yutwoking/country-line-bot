@@ -33,13 +33,13 @@ public class CountryResources {
 		return countryInfoList;
 	}
 
-	public static CountryEntity searchCountryInfo(String serachString) {
+	public static CountryEntity searchCountryInfo(String searchString) {
 		for (CountryEntity entity : countryInfoList) {
-			if (serachString.equals(entity.getJapaneseName())
-					|| serachString.equalsIgnoreCase(entity.getEnglishName())
-					|| serachString.equalsIgnoreCase(entity.getCodeInAlpha2())
-					|| serachString.equalsIgnoreCase(entity.getCodeInAlpha3())
-					|| serachString.equalsIgnoreCase(entity.getCodeInNumeric())) {
+			if (entity.equalJapaneseName(searchString)
+					|| searchString.equalsIgnoreCase(entity.getEnglishName())
+					|| searchString.equalsIgnoreCase(entity.getCodeInAlpha2())
+					|| searchString.equalsIgnoreCase(entity.getCodeInAlpha3())
+					|| searchString.equalsIgnoreCase(entity.getCodeInNumeric())) {
 				return entity;
 			}
 		}

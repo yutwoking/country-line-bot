@@ -37,4 +37,18 @@ public class CountryEntity {
     			"地域 : " + location;
     }
 
+    public boolean equalJapaneseName(String searchString) {
+    	if (japaneseName.contains("|")) {
+    		String[] japaneseNames = japaneseName.split("|");
+    		for (String name : japaneseNames) {
+    			if(name.equals(searchString)) {
+    				return true;
+    			}
+    		}
+    		return false;
+    	} else {
+    		return japaneseName.equals(searchString);
+    	}
+    }
+
 }
